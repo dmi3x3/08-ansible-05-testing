@@ -259,7 +259,20 @@ INFO     Sanity checks: 'docker'
 ```
 
 Такую ошибку можно исправить, пересобрав python (./configure --with-ssl-default-suites=openssl), поэтому взял более удобный для себя образ ubuntu (systemd на нем работает стабильно) и собрал [контейнер на нем](Dockerfile)
-добавл туда переустановку molecule-docker (pip3 install molecule-docker).
+добавил туда переустановку molecule-docker (pip3 install molecule-docker).
+
+СОздание контейнера
+
+```shell
+docker build -t tox_u_vector .
+```
+
+строка запуска:
+
+```shell
+docker run --privileged=True --name tox_roles -v ~/netology/run-mnt-homeworks_1/08-ansible-05-testing/roles/vector-role:/opt/vector-role/ -w /opt/vector-role tox_u_vector
+```
+
 tox выполнился без ошибок.
 ```shell
 ```shell
