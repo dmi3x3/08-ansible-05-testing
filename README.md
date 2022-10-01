@@ -261,7 +261,7 @@ INFO     Sanity checks: 'docker'
 Такую ошибку можно исправить, пересобрав python (./configure --with-ssl-default-suites=openssl), поэтому взял более удобный для себя образ ubuntu (systemd на нем работает стабильно) и собрал [контейнер на нем](Dockerfile)
 добавил туда переустановку molecule-docker (pip3 install molecule-docker).
 
-СОздание контейнера
+создание контейнера
 
 ```shell
 docker build -t tox_u_vector .
